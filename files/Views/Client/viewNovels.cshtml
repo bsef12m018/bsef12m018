@@ -1,0 +1,54 @@
+﻿@using novelSiteLayout.Models 
+@model List<novelSiteLayout.Models.novel>
+
+
+                    <h2> Novels</h2>
+                    <table border ="1">
+                        <tr>
+                            <td style ="padding:6px">Novel Name</td>
+                            <td style ="padding:6px">Author Name</td>
+                            <td style ="padding:6px">Category</td>
+                            <td style ="padding:6px">Price</td>
+                        </tr>
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <tr>
+                            <td style ="padding:6px">@Model[i].novelName</td>
+                            <td style ="padding:6px">@Model[i].authorName</td>
+                            <td style ="padding:6px">@Model[i].category</td>
+                            <td style ="padding:6px">@Model[i].Price</td>
+                        </tr>
+                    }
+
+                    </table>
+
+                <!---    <table border ="1">
+                        
+                        <tr>
+                            <td style ="padding:6px">Jannat key Patty</td>
+                            <td style ="padding:6px">Nimra Ahmed</td>
+                            <td style ="padding:6px">Social Romantic Novel</td>
+                        </tr>
+                        <tr>
+                            <td style ="padding:6px">Aab-e-hayat</td>
+                            <td style ="padding:6px">Umaira Ahmed</td>
+                            <td style ="padding:6px">Social Romantic Novel</td>
+                        </tr>
+                        <tr>
+                            <td style ="padding:6px">black Day</td>
+                            <td style ="padding:6px">Mazher Kaleem</td>
+                            <td style ="padding:6px">Adventurer</td>
+                        </tr>
+                        <tr>
+                            <td style ="padding:6px">Saraab</td>
+                            <td style ="padding:6px">Kashif Zubair</td>
+                            <td style ="padding:6px">Adventurer</td>
+                        </tr>
+
+                        <tr>
+                            <td style ="padding:6px">Jahan-e-Danish</td>
+                            <td style ="padding:6px">Ahsaan Danish</td>
+                            <td style ="padding:6px">Aap-Beeti</td>
+                        </tr>
+                    </table> --->
+               

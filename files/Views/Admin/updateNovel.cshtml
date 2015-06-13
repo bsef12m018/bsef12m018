@@ -1,0 +1,30 @@
+﻿@using novelSiteLayout.Models 
+@model  novelSiteLayout.Models.novel
+
+@{
+    ViewBag.Title = "updateNovel";
+    }
+
+<br />
+                    <h2>Update Novel</h2>
+
+             <form method ="post" action ="/Admin/saveNovel/@Session["nId"];" enctype ="multipart/form-data">
+                    Novel Name : <input type ="text" placeholder ="Novel Name" name ="novelName" value ="@Session["nName"]" style ="margin-bottom:6px" maxlength ="500"/><br />
+                    Author Name : <input type ="text" placeholder ="Author Name" name ="authorName" value ="@Session["aName"]" style ="margin-bottom:6px" maxlength ="500" /><br />
+                    Image : <input type ="file" name ="image"  /><br />
+                     Novel File : <input type ="file" name ="novel" /><br />
+                    Link : <input type ="text" placeholder ="link" value ="@Session["link"]" name ="link" style ="margin-bottom:6px" maxlength="500" /><br />
+                    Price : <input type ="text" placeholder ="price" value ="@Session["pri"]" name =" price" style ="margin-bottom:6px" maxlength="500" /><br />
+                        <select name="category" >
+                            <option value="--select--">--select--</option>
+                            <option value="horrorNovels">Horror Novels</option>
+                            <option  value="adventurer">Adventurer Novels</option>
+                            <option  value="socialRomanticNovel">Social Romantic Novels</option>
+                            <option  value="aap-beeti">Aap-Beeti</option>
+                        </select><br />
+                    Description :<br /><textarea name ="textArea" onmouseover ="@Session["des"]" placeholder ="description" maxlength="500"></textarea><br />
+                    <div style ="text-align:center">
+                        <input type = "submit" value ="Update" id ="update" style ="min-height:25px;min-width:100px" />
+                    </div>
+               </form>
+               

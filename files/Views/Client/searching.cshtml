@@ -1,0 +1,26 @@
+﻿@using novelSiteLayout.Models 
+@model List<novelSiteLayout.Models.novel>
+
+    <br /><br />
+<h1>Searching</h1>
+
+Novel Name : <input type ="text" name ="nvlName" id ="nvlNAme" placeholder ="Novel Name" style="margin-left:20px;margin-bottom:10px" /><br />
+Author Name : <input type ="text" name ="authorName" id ="authrName" placeholder ="Author Name" style="margin-left:20px;margin-bottom:10px" /><br />
+<input type ="Button" id ="search" value ="Search" style ="text-align:left;margin-left:80px;margin-bottom:10px" />
+    
+
+<script>
+    $("#search").click(function () {
+        var nvlName = $("#nvlNAme").val();
+        var authrName = $("#authrName").val();
+        $.getJSON("/Client/search?nvlName=" + nvlName + "&authrName=" + authrName, function (list) {
+            $("#table").append();
+        })
+    })
+</script>
+
+<div id ="SearchTable">
+    <table id ="table">
+
+    </table>
+</div>

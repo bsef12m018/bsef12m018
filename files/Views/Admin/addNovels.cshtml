@@ -1,0 +1,51 @@
+﻿@using novelSiteLayout.Models 
+@model  novelSiteLayout.Models.novel
+
+
+
+                    <h2>Add Novel</h2>
+               <form method ="post" action ="/Admin/saveNovel" enctype ="multipart/form-data">
+                    Novel Name : <input type ="text" placeholder ="Novel Name" name ="novelName" id="autoComplete" style ="margin-bottom:6px" maxlength ="500"/><br />
+                   <script>
+                       var tags = ["Alakh Nagri", "Mushif", "Dajjal", "Muqeed-e-Khak", "Idraak", "Wapssi", "Saraab", "Black Day", "Aapna-giraban-Chak", "Yadoon Ki Baraat", "Jahan-e-Danish", "Peer-e-Kamil"];
+                       $("#autoComplete").autocomplete({
+                           source: function (request, response) {
+                               var matcher = new RegExp("^" + $.ui.autocomplete.escapeRegex(request.term), "i");
+                               response($.grep(tags, function (item) {
+                                   return matcher.test(item);
+                               }));
+                           }
+                       })
+                   </script>
+                    Author Name : <input type ="text" placeholder ="Author Name" name ="authorName" style ="margin-bottom:6px" maxlength ="500" /><br />
+                    Image : <input type ="file" name ="image" /><br />
+                     Novel File : <input type ="file" name ="novel" /><br />
+                    Link : <input type ="text" placeholder ="link" name ="link" style ="margin-bottom:6px" maxlength="500" /><br />
+                    Price : <input type ="text" placeholder ="price" name =" price" style ="margin-bottom:6px" maxlength="500" /><br />
+                        <select name="category" >
+                            <option value="--select--">--select--</option>
+                            <option value="horrorNovels">Horror Novels</option>
+                            <option  value="adventurer">Adventurer Novels</option>
+                            <option  value="socialRomanticNovel">Social Romantic Novels</option>
+                            <option  value="aap-beeti">Aap-Beeti</option>
+                        </select><br />
+                    Description :<br /><textarea name ="textArea" placeholder ="description" maxlength="500" style ="margin-bottom:6px"></textarea><br />
+                   <script>
+                       $(function () {
+                           $("#datePicker").datepicker();
+                       });
+                   </script>
+                   Date : <input type ="text" id ="datePicker" style ="margin-bottom:6px"/>
+                   
+                    <div style ="text-align:center">
+                        <input type = "submit" value ="ADD" id ="add" style ="min-height:25px;min-width:100px" />
+                    </div>
+                        </form>
+              
+
+
+
+
+
+
+
