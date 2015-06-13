@@ -1,0 +1,29 @@
+﻿@using novelSiteLayout.Models 
+@model List<novelSiteLayout.Models.Admin>
+
+
+                    <b style ="font-size:30px">Signin</b><br />
+                    <form method ="post" action ="/Client/Check">
+                   <p style ="margin-left:20px"> Enter Email </p>
+                   <input type ="text" placeholder="Enter Email" name ="email" style="margin-left:20px;margin-bottom:10px" id = "email" /><span id ="eMa"></span><br />
+    <script>
+        $("#email").focusout(function () {
+            var lN = $("#email").val();
+            if (lN.length == 0)
+                $("#eMa").text("Email Required");
+        })
+    </script>
+                     <p style ="margin-left:20px"> Enter Password </p>
+                  <input type="password" placeholder="Enter password" name ="password"  style="margin-left:20px ;margin-bottom:10px"  id = "password" /><span id ="pass"></span><br />
+    <script>
+        $("#password").focusout(function () {
+            var lN = $("#password").val();
+            if (lN.length == 0)
+                $("#pass").text("password required");
+        })
+    </script>
+                    <br />
+                    <a style ="margin-left:20px" href ="/Signup/signup">I don't have account</a><br />
+                    <button type ="submit" class="btn-success" id ="signin" style ="margin-left:20px;margin-bottom:10px ;min-height:25px ; min-width:100px">signin</button>
+            </form>
+                

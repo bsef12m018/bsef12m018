@@ -1,0 +1,96 @@
+﻿ @using novelSiteLayout.Models 
+@model  novelSiteLayout.Models.Admin
+
+
+
+                    <b style ="font-size:30px">SignUp</b><br /><br />
+                 <!---   <form method ="post" action ="/Signup/save">
+                     First Name 
+                   <input type ="text" name ="firstName" placeholder="First Name" style="margin-left:20px;margin-bottom:10px"/><br />
+                     Last Name 
+                   <input type ="text" placeholder="last Name" name ="lastName" style="margin-left:20px;margin-bottom:10px"/><br />
+                    Enter Email 
+                   <input type ="text" placeholder="Enter Email" name ="email" style="margin-left:20px;margin-bottom:10px"/><br />
+                     Enter Password 
+                  <input type ="password" placeholder="Enter password" name ="password" style="margin-left:20px ;margin-bottom:10px" /><br />
+                    ReEnter Password 
+                  <input type ="password" placeholder="Enter password" name ="rePassword"  style="margin-left:20px ;margin-bottom:10px" />
+                    <br />
+                        <p style="text-align:center">
+                    <button type ="submit" class="btn-success" name ="signup" style ="margin-left:20px;margin-bottom:10px ;min-height:25px ; min-width:100px">SignUp</button>
+          </p> </form>--->
+              
+
+
+
+<br />
+@using (Html.BeginForm("save", "Signup", "Post"))
+{
+    <div id="checking">Checking...</div>
+    <div>
+
+    @Html.Label("First Name" , new {style="margin-left:20px ;margin-bottom:10px" })
+    @Html.TextBoxFor(m => m.firstName , new {style="margin-left:20px ;margin-bottom:10px" })
+         <input type="button" id="b1" value="Check" /><br />
+    <div id="result"></div>
+        <script>
+
+            $(document).ready(function () {
+
+                $('#checking').hide();
+
+                $('#b1').click(function () {
+
+                    var userName = $('#firstName').val();
+
+                    //alert('User Name ='+ userName);
+                    $('#checking').show();
+                    $.getJSON("/Signup/CheckUserName?UserName=" + userName, function (data) {
+                        $('#checking').hide();
+                        if (data == true) {
+                            $('#result').text("User already exists in database");
+
+                        }
+                        else {
+                            $('#result').text("User Name is available");
+                        }
+                    });
+
+                });
+
+            });
+    </script>
+
+    </div>
+
+    @Html.Label("Last Name" , new {style="margin-left:20px ;margin-bottom:10px" })
+    @Html.TextBoxFor(m => m.lastName , new {style="margin-left:20px ;margin-bottom:10px", id = "lastName" })<span id ="lastNam"></span><br />
+    <script>
+        $("#lastName").focusout(function () {
+            var lN = $("#lastName").val();
+            if (lN.length == 0)
+                $("#lastNam").text("Last Name Required");
+        })
+    </script>
+    @Html.Label("Email" , new {style="margin-left:20px ;margin-bottom:10px" })
+    @Html.TextBoxFor(m => m.email , new {style="margin-left:20px ;margin-bottom:10px", id = "email" })<span id ="eMa"></span><br />
+    <script>
+        $("#email").focusout(function () {
+            var lN = $("#email").val();
+            if (lN.length == 0)
+                $("#eMa").text("Email Required");
+        })
+    </script>
+    @Html.Label("Password" , new {style="margin-left:20px ;margin-bottom:10px" })
+    @Html.PasswordFor(m => m.password , new {style="margin-left:20px ;margin-bottom:10px", id = "password" })<span id ="pass"></span><br />
+    <script>
+        $("#password").focusout(function () {
+            var lN = $("#password").val();
+            if (lN.length == 0 || lN.length < 6)
+                $("#pass").text("password must be greater then 6 letters");
+        })
+    </script>
+    <p style="text-align:center">
+                    <button type ="submit" class="btn-success" name ="signup" style ="margin-left:20px;margin-bottom:10px ;min-height:25px ; min-width:100px">SignUp</button>
+          </p> 
+}           

@@ -1,0 +1,108 @@
+﻿@using novelSiteLayout.Models 
+@model novelSiteLayout.Models.novel
+
+
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Description</title>
+    <link href ="/Content/bootstrap.css" rel ="stylesheet"/>
+    <script src ="/Scripts/bootstrap.js"></script>
+</head>
+<body style ="background-color:ButtonFace">
+
+        <nav class ="navbar navbar-inverse" role ="navigation">
+                <div class ="navbar-header">
+                    <a class ="navbar-brand" href ="/Home/Index">Novel Site       </a>
+                    </div>
+                <div>
+                    <ul class ="nav navbar-nav">
+                                <li class ="active"><a href ="/Home/Index">Home </a></li>
+                                <li><a href ="/Client/viewNovels" >View novels</a></li>
+                                 <li><a href ="/Client/contactUs" >Contact Us</a></li>
+                            </ul>
+
+                            <form class ="navbar-form  navbar-left pull-right"   role ="search">
+                                <div class="form-group">
+                                    <input type ="text" placeholder ="Search" class="form-control" /></div>
+                                <button class ="btn-primary" type ="submit" id ="sb1">
+                                       Search</button>
+                                    
+                                </form>
+                                
+                            </div>
+                     </nav>
+    <br /><br />
+    <div class ="row">
+        <div class ="col-md-3">
+            <div class ="list-group">
+               
+            <img src = "@Model.image" style ="min-height:350px ;max-height:450px; min-width:350px ;margin-left:20px"/>
+                 
+            </div>
+        </div>
+        <div class ="col-xs-6">
+            <br /><br />
+            <h1>Description</h1>
+            
+          
+                    <p style ="font-size:25px">@Model.description</p>
+            <br /><br />
+            <h1 style ="text-align:center">Read Online</h1>
+            
+            <p style ="text-align:center"><a href = "@Model.link"><b style ="font-size:30px">Click Here</b></a></p>
+        </div>
+    </div>
+    <div class ="row">
+        <div class ="col-md-3"></div>
+        <div class ="col-xs-6" style ="font-size:25px">
+           
+            <h1>Comments</h1>
+            <br />
+           @foreach (var user in ViewBag.Comment)
+           {
+               
+               <img src ="@user.image" style ="min-height:100px ;max-height:100px;max-width:150px;float:left"/> 
+               
+                   <h2><b style ="font-size:30px">@user.name</b></h2>
+                   <b style ="font-size:20px; color:blue">Comment</b><br />
+                   <span>@user.comment</span><br />
+               
+               <br />
+           }
+            <br />
+            
+            <form method ="post" action ="/Description/commenting/@Model.Id" enctype ="multipart/form-data"><br /><br />
+           <br /> Name : <input type ="text" placeholder ="Name" name ="nameDes" style ="margin-bottom:10px" /><br />
+            Email : <input type ="text" placeholder ="Email" name ="emailDes" style ="margin-bottom:10px"/><br />
+            Comment : <br />
+            <textarea name ="comentArea" placeholder="What's on your mind" maxlength ="500" style ="margin-bottom:10px"></textarea><br />
+            Image : <input type ="file" name ="image" style ="margin-bottom:10px" /><br />
+                 <div style ="text-align:left">
+                <input type ="submit" value ="Submit" name ="submitComment" style ="margin-bottom:10px" /></div>
+                </form>
+        </div>
+
+
+        <!--- Fancy Box--->
+        <div class ="col-xs-3">
+            <a class="fancybox" rel="group" href="/images/aik mohabbat aur sahi.jpg"><img src="/images/aik mohabbat aur sahi.jpg" alt="" /></a>
+            <a class="fancybox" rel="group" href="/images/abdullah-hashim-nadeem.jpg"><img src="/images/abdullah-hashim-nadeem.jpg" alt="" /></a>
+        </div>
+        <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+        <script type="text/javascript">
+
+
+            $(document).ready(function () {
+                $(".fancybox").fancybox();
+            });
+</script>
+    </div>
+
+   
+</body>
+</html>

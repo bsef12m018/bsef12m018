@@ -1,0 +1,21 @@
+﻿@using novelSiteLayout.Models 
+@model List<novelSiteLayout.Models.novel>
+
+
+                  
+                  <h1>Adventurer Novels</h1><br />
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <a href ="../Description/descriptnPage/@Model[i].Id"><img src = "@Model[i].image" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                    }
+
+                   <!---  <a href ="http://kitaabghar.com/bookbase/mazhar/BlackDayImranSeriesNovel.html"><img src ="/images/blackDay.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                    <a href ="http://kitaabghar.org/bookbase/KashifZubair/SaraabNovel.php"><img src ="/images/saraab.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                     <a href ="http://kitaabghar.com/bookbase/mohiuddinnawab/WapsiSuspenseDigestSaga.html"><img src ="/images/wapsi.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+
+                 <a href = "http://kitaabghar.com/bookbase/aleem/DajjalOneNovelFP.html"><img src ="/images/dajal.jpg" style ="max-height:450px ; margin-bottom:20px ;  min-height :450px ;max-width :350px ;margin-right:12px" /></a>
+                 <a href ="http://sohnidigest.com/social-romantic-novels/idrak-realization/"><img src ="/images/idrak.jpg" style ="max-height:450px ; min-height :450px ;max-width:350px ;margin-bottom:20px ;margin-right:12px" /></a>
+               
+                --->
+               

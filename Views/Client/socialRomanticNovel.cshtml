@@ -1,0 +1,32 @@
+﻿@using novelSiteLayout.Models 
+@model List<novelSiteLayout.Models.novel>
+
+
+                    
+                    <h1>Social Roamntic Novels</h1><br />
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <a href ="../Description/descriptnPage/@Model[i].Id"><img src = "@Model[i].image" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                    }
+
+
+                  <!---   <a href ="http://www.urdunovels.org/2012/07/mushaf-by-nimra-ahmed-new-book/"><img src ="/images/mushif.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                    <a href ="http://www.urdunovelsonline.com/2013/12/peer-e-kamil-s-a-w-novel-by-umera-ahmed/"><img src ="/images/Peer-e-Kamil.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                     <a href ="http://www.urdunovelsonline.com/2013/11/shehr-e-zaat-by-umera-ahmed/"><img src ="/images/shehr-e-zat.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+
+                 <a href ="http://www.urdunovelsonline.com/category/abe-hayat-by-umera-ahmed/"><img src ="/images/Aab e hayat by Umaira Ahmed Episode 2 Urdu Novels Center (urdunovels12.blogspot.com).jpg" style ="max-height:450px ; margin-bottom:20px ;  min-height :450px ;max-width :350px ;margin-right:12px" /></a>
+                 <a href ="http://www.onlineurdunovels.com/read.php?no=16&t=Abdullah"><img src ="/images/abdullah-hashim-nadeem.jpg" style ="max-height:450px ; min-height :450px ;max-width:350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                 <a href ="http://www.urdunovels.org/2011/10/aik-mohabbat-aur-sahi-by-hashim-nadeem/"><img src ="/images/aik mohabbat aur sahi.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+               
+                 <a href ="http://www.urdunovels.org/2011/01/khuda-aur-mohabbat-by-hashim-nadeem/"><img src ="/images/Khuda aur mohabbat by Hashim Nadeem.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                 <a href ="http://www.urdunovelsonline.com/2014/02/meri-zaat-zara-e-benishan-by-umera-ahmed/"><img src ="/images/Meri Zaat Zarra-e-Be Nishan by Umera Ahmed.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                 <a href ="http://freeurdudigest.blogspot.com/2015/03/muqaddas-by-hashim-nadim-khan-online.html"><img src ="/images/Muqaddas.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:8px" /></a>
+
+                  <a href ="descriptnPage.html"><img src ="/images/amar bail.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                 <a href ="http://freeurdudigest.blogspot.com/2013/12/baili-rajpootan-ki-malika-by-nimra.html"><img src ="/images/Beli-Rajputan-Ki-Malika.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                 <a href ="http://pakistani-point.blogspot.com/p/jannat.html"><img src ="/images/jannat-key-patty.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                
+                 <a href ="http://www.urdunovelsonline.com/2014/05/zindagi-gulzar-hai-by-umera-ahmed/"><img src ="/images/zindagi.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                 <a href ="http://www.mediafire.com/view/bjc7vvxc8q58199/Ankhon_Se_Meri_Dekho_-_Faiza_Iftikhar.pdf"><img src ="/images/ankhonSyMeriDaikho.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>                    
+                --->

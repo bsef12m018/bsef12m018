@@ -1,0 +1,21 @@
+﻿@using novelSiteLayout.Models 
+@model List<novelSiteLayout.Models.novel>
+
+
+
+                    <h1>Aap_Beeti</h1><br />
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <a href ="../Description/descriptnPage/@Model[i].Id"><img src = "@Model[i].image" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                    }
+
+                
+<!---
+                     <a href ="http://rspk.paksociety.com/novels/aleem-ul-haq-haqi/alakh-nagri/"><img src ="/images/alkhnagri.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                    <a href ="http://allurdupdfnovels.blogspot.com/2014/08/apna-gireban-chaak-by-dr-javed-iqbal.html"><img src ="/images/apnaGaribanChaak.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                     <a href ="http://www.urdumaza.com/search/results-keyword-book-jahan-e-danish-by-ahsan-danish.html"><img src ="/images/jahanDanish.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+
+                 <a href = "http://pdfbooksfree.pk/yadon-ki-barat-josh-malihabadi/"><img src ="/images/yaadonKiBarat.jpg" style ="max-height:450px ; margin-bottom:20px ;  min-height :450px ;max-width :350px ;margin-right:12px" /></a>
+                
+                --->

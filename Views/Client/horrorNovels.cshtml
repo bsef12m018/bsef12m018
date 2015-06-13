@@ -1,0 +1,16 @@
+﻿@using novelSiteLayout.Models 
+@model List<novelSiteLayout.Models.novel>
+
+
+                    
+                    <h1>Horror Novels</h1><br />
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <a href ="../Description/descriptnPage/@Model[i].Id"><img src = "@Model[i].image" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                    }
+
+                    <!--- <a href ="http://kitaabghar.com/bookbase/zubaria/Muqeed-e-KhakNovel.html"><img src ="/images/muqeed-e-khak.jpg" style ="max-height:450px ; min-height :450px; max-width :350px ;margin-bottom:20px ;margin-right:12px" /></a>
+                    --->
+                
+               
