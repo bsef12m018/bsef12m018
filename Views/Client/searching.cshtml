@@ -13,11 +13,19 @@ Author Name : <input type ="text" name ="authorName" id ="authrName" placeholder
     $("#search").click(function () {
         var nvlName = $("#nvlNAme").val();
         var authrName = $("#authrName").val();
-        $.getJSON("/Client/search?nvlName=" + nvlName + "&authrName=" + authrName, function (list) {
-            $("#table").append();
+        $.getJSON("/Client/search?nvlName=" + nvlName + "&authrName=" + authrName).done(function(data){
+            $('table').empty();
+            $('#table').append('<thead> <tr> <td style ="padding:6px"> Novel Name</td > <td style ="padding:6px">Author NAme</td><td style ="padding:6px">Category</td>  </tr> </thead> <tbody>');
+            for (var i = 0; i < data.length; i++) {
+                $('#table').append('<tr> <td style ="padding:6px">' + data[i].novelName + '</td>        <td style ="padding:6px">' + data[i].authorName + '</td> <td style ="padding:6px">' + data[i].category + '</td> </tr>');
+            }
+            $('#table').append('</tbody>');
+        }).fail(function (jqxhr, textStatus, error) {
+            alert('Error =' + error);
         })
-    })
+    });
 </script>
+
 
 <div id ="SearchTable">
     <table id ="table">
