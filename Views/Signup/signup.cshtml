@@ -47,12 +47,12 @@
                     $('#checking').show();
                     $.getJSON("/Signup/CheckUserName?UserName=" + userName, function (data) {
                         $('#checking').hide();
-                        if (data == true) {
-                            $('#result').text("User already exists in database");
+                        if (data) {
+                            $('#result').text("User Name is available");
 
                         }
                         else {
-                            $('#result').text("User Name is available");
+                            $('#result').text("User already exists in database");
                         }
                     });
 
